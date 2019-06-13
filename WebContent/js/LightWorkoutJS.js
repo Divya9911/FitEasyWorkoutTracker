@@ -1,4 +1,3 @@
-
 // Get the modal
 var modal = document.getElementById("myModal");
 var statmodal = document.getElementById("statModal");

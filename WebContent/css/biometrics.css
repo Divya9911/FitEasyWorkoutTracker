@@ -31,10 +31,10 @@
     
     /* On small screens, set height to 'auto' for sidenav and grid */
     @media screen and (max-width: 767px) {
-      .sidenav {
+      /*.sidenav {
         height: auto;
         padding: 15px;
-      }
+      }*/
       .row.content {height:auto;} 
     }
   
@@ -44,7 +44,7 @@
   }*/
 
   #img{
-    background-image:url("../images/dark background.jpg");
+    background-image:url("../images/darkBackground.jpg");
   }
   /*#id1{
     text-decoration-color: white;
@@ -57,4 +57,19 @@
   }
   #id3{
     color: white;
+  }
+  #id4{
+    color: white;
+  }
+  #id5{
+    color: white;
+  }
+  #card1{
+  	width: 40%;
+  	left: 0px;
+  }
+  #card2{
+  	width: 40%;
+  	right: 0px;
+  	float: right;
   }
