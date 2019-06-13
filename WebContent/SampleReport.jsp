@@ -1,6 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ page import="java.sql.*"%>
+<%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%> --%>
+<%@ page import="java.sql.*, javax.servlet.http.HttpSession"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +32,16 @@
 			</div>
 		</nav>
 	</header>
-	<div class="table table-responsive; space">
+	 <%-- <%HttpSession sessionNew = request.getSession();%>
+	 <% String workout_plan = sessionNew.getAttribute("workout_plan").toString();
+	String activity_name = sessionNew.getAttribute("activity_name").toString();
+	Double time_taken = (Double) sessionNew.getAttribute("time_taken");
+	Double cal_burnt = (Double) sessionNew.getAttribute("cal_burnt");
+	String date = sessionNew.getAttribute("date").toString();
+	%> --%>
+	 
+	 <div class="table table-responsive space">
+	 <form action="reportservlet">
 		<table class="center table hoverTable" style="table-layout: fixed;">
 			<tr>
 				<th scope="col">Workout Plan</th>
@@ -40,7 +50,21 @@
 				<th scope="col">Calories Burnt</th>
 				<th scope="col">Date</th>
 			</tr>
-			<%! int totalTime=0;
+			
+			<%-- <tr>
+				<td><%=workout_plan%></td>
+				<td><%=activity_name %></td>
+				<td><%=time_taken%></td>
+				<td><%=cal_burnt%></td>
+				<td><%=date%></td>
+			</tr>
+			 --%><tr>
+			<td><input type="submit" value="submit"></td>
+			</tr>
+		</table>
+		</form>
+			
+			<%-- /*<%! int totalTime=0;
 				int totalCal =0 ;%>
 			<%
 			Statement stmt=null;
@@ -77,8 +101,6 @@
   			{
   				totalTime = rs1.getInt(1);
   				totalCal = rs1.getInt(2);
-  				
-  				
   			%>
 			<tr>
 				<td></td>
@@ -91,16 +113,18 @@
   			}
 			%>
 		</table>
-		<%
+		
+			<% 	
     		rs.close();
 			rs1.close();
     		stmt.close();
     		stmt1.close();
     		dbCon.close();
-    		}catch (Exception e) {
+    		}catch (Exception e)
+			{
 			System.out.println("Problem in loading the driver : "+e.getMessage());
 			}
-			%>
+			%> --%>
 	</div>
 	<div>
 		<footer class="container-fluid navbar-dark bg-dark">
